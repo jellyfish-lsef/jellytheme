@@ -65,6 +65,7 @@
         }
         function init(application,load) {
             iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            try { window.gui.destroy() } catch(e) {}
             var gui = new dat.GUI({
                 name: "Jellytheme",
                 autoplace: true,
