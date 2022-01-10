@@ -1,0 +1,100 @@
+<head>
+    <script src="./dat.js"></script>
+    <title>Jellytheme</title>
+    <style>
+        iframe {
+            width: calc(100% - 245px);
+            height: 100%;
+            border: 0;
+        }
+        body {
+            padding:0;
+            margin:0;
+            overflow: hidden;
+            background: #000;
+        }
+        .dg.a {
+            margin-right:0px;
+        }
+        .close-button {
+            display: none;
+        }
+        .property-name {
+            white-space: nowrap;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="jellyfish/index.html"></iframe>
+    <script src="jellyfish.js"></script>
+    <script src="capacitor.js"></script>
+    <script>
+        if (navigator.userAgent.indexOf('hrom') == -1) {
+            alert("Since Jellyfish & Script-Ware were both designed to run in Chromium based environments, it is highly recommended that you use Google Chrome to use Jellytheme.")
+        }
+        var iframe = document.querySelector('iframe');
+        var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        var Application = "Jellyfish";
+        var loadSaves = {}
+        function loadSave(key) {
+            return function() {
+                var save = localStorage.getItem(key);
+                if (save) {
+                    save = JSON.parse(save);
+                    if (key.startsWith("Jellyfish")) {
+                        gui.destroy();
+                        init(jellyfish, save);
+                    } else if (key.startsWith("Script-Ware")) {
+                        gui.destroy();
+                        init(capacitor, save);
+                    }
+                }
+
+            }
+        }
+        function save() {
+            var name = prompt("Save as:", "ThemeName");
+            if (name) {
+                var key = Application +"_" +  name
+                localStorage.setItem(key, JSON.stringify(themeState));
+                loadSaves[key] = loadSave(key);
+                saves.add(loadSaves,key).name("Load " + name);
+            }
+        }
+        function init(application,load) {
+            iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            var gui = new dat.GUI({
+                name: "Jellytheme",
+                autoplace: true,
+            });
+            window.gui = gui
+            gui.add(window,"Application",["Jellyfish","Script-Ware M"]).onChange(function(value) {
+                if (value == "Jellyfish") {
+                    iframe.src = "jellyfish/index.html";
+                    gui.destroy();
+                    iframe.onload = () => init(jellyfish);
+                } else {
+                    iframe.src = "capacitor/index.html";
+                    gui.destroy();
+                    iframe.onload = () => init(capacitor);
+                }
+
+            });
+            saves = gui.addFolder("Saves");
+            var save = saves.add(window,"save");
+            for (var key in localStorage) {
+                if (key.startsWith(Application)) {
+                    ;(function(key) {
+                        var name = key.substring(Application.length + 1);
+                        console.log(name)
+                        loadSaves[key] = loadSave(key)
+                        saves.add(loadSaves,key).name("Load " + name);
+                    })(key);
+                }
+            }
+            application(gui,load)
+        }
+        iframe.onload = () => init(jellyfish);
+    </script>
+</body>

@@ -1,0 +1,447 @@
+<!--
+    (c) 2021 theLMGN & Script-Ware Team 
+
+    i am deeply sorry if you're here reading this code
+-->
+<html>
+
+<head>
+    <script>
+        console.log("%cScript%c-%cWare M " + require("../package.json").version,
+            "font-family: 'Source Sans Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-style: italic;font-size: 300%;color:#fff",
+            "font-family: 'Source Sans Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size: 300%;color:#429bfb;font-style: italic;",
+            "font-family: 'Source Sans Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-size: 300%;color:#fff;font-style: italic;"
+            )
+        var quotes = [
+            '"fluxus on top" - david baszucki, 2021',
+            '"script-ware winning" - john shedletsky, 2021',
+            '"marry me azulsex" - justin sousa 2021',
+
+            '"literally fluxus with sirhurt skin" - a v3rmie, 2021',
+            '"you saw what sakan said about sw?"" - showerhead, 2021\n"no, idek who sakan is" - azulx, 2021\n"https://cdn.discordapp.com/attachments/789933973220229150/828622881520091146/image0.png" - showerhead, 2021',
+            '"YOOOO I JUST GOT KICKED OUT MY MATH CLASS 🙏🙏🙏🙏" - showerhead, 2021',
+            '"alexa, play stache by zedd" - azulx, 2018',
+            "Script-Ware 2.0.0 [CRACKED BY e1ZY]",
+        ]
+        console.log("%c" + quotes[Math.round((quotes.length - 1) * Math.random())],
+            "font-family: serif;font-style: italic;font-size: 200%;color:#fffa")
+        var ScriptWare = {
+            setWinning: function (v) {
+                if (!v) {
+                    throw new Error("Script-Ware is always winning.")
+                };
+                return "Script-Ware winning!"
+            }
+        }
+    </script>
+    <title>Script-Ware M</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- without specifying charset monaco goes Â-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="assets/font/icon.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="showModal">
+    <div id="mainsidebar">
+        <a href="#about" alt="Script-Ware Options" data-emoji='􀍟' id="aboutBtn" class='pagelink'>
+            <img src="assets/img/logo.png" width="50" height="50" />
+        </a>
+
+        <a href="#editor" alt="Code Editor" data-emoji='􀙚' class="material-icons selected iconButton pagelink"
+            id="editorBtn">
+            code
+        </a>
+        <a href="javascript:openSidebar('files')" alt="My Scripts" data-emoji='􀈕'
+            class="material-icons iconButton pagelink" id="filesBtn">
+            folder
+        </a>
+        <a href="javascript:openSidebar('tool')" alt="Tools" data-emoji='􀤊' class="material-icons iconButton pagelink"
+            id="toolBtn">
+            handyman
+        </a>
+        <a href="javascript:openSidebar('friend')" alt="Friends" data-emoji='􀉬'
+            class="material-icons iconButton pagelink" id="friendBtn">
+            group
+        </a>
+        <a href="#scriptLibrary" alt="Script Library" data-emoji='􀈿' class="material-icons iconButton pagelink"
+            id="scriptLibraryBtn">
+            description
+        </a>
+        <div class='spacer'></div>
+        <a href="javascript:runScript(mainEditor.getValue())" alt="Run Script" class="material-icons iconButton"
+            id="runBtn">
+            play_arrow
+        </a>
+        <a href="javascript:inject()" alt="Inject" class="material-icons iconButton" id="injectBtn">
+            memory
+        </a>
+    </div>
+    <div id="contentContainer">
+        <div class="content" id="aboutPage">
+            <section id="aboutPageHeader">
+
+                <img src="assets/img/logo.png" height="96">
+                <div>
+                    <h1 id="aboutName">JellyTheme Editor</h1>
+                    <h3 id="aboutCopyright">© 2022 theLMGN & Script-Ware Software</h3>
+                </div>
+            </section>
+
+            <section id="aboutPageLinks">
+                <a href="https://dashboard.script-ware.com/settings" target="_blank">
+                    <i class="material-icons">account_circle</i>
+                    Manage Account
+                </a>
+                •
+                <a href="https://stats.uptimerobot.com/nlgEktXGAr" target="_blank">
+                    <i class="material-icons">dns</i>
+                    Status
+                </a>
+                •
+                <a href="https://docs.script-ware.com/" target="_blank">
+                    <i class="material-icons">menu_book</i>
+                    Documentation
+                </a>
+                •
+                <a href="https://dashboard.script-ware.com/support" target="_blank">
+                    <i class="material-icons">support_agent</i>
+                    Support
+                </a>
+                <br>
+                <a href="https://forum.script-ware.com" target="_blank">
+                    <i class="material-icons">forum</i>
+                    Forum
+                </a>
+                •
+                <a href="https://discord.gg/uau3QC5642" target="_blank">
+                    <i class="material-icons">sms</i>
+                    Discord
+                </a>
+            </section>
+            <table id="aboutPageOptions">
+                <tbody>
+                    <tr class="aboutPageOption">
+                        <td class="aboutPageOptionHeader">
+                            <b><i class="material-icons">library_add_check</i> Checkbox</b><br>
+                            This is an example of a checkbox.<br>
+                            <small><i class="material-icons">warning</i> This checkbox can be checked <b>and</b>
+                                unchecked. Groundbreaking stuff, eh?</small>
+                        </td>
+                        <td class="aboutPageOptionContent">
+                            <input type="checkbox" name="ontop" id="ontop">
+                        </td>
+                    </tr>
+
+
+                    <tr class="aboutPageOption">
+                        <td class="aboutPageOptionHeader">
+                            <b><i class="material-icons">smart_button</i> Links </b><br>
+                            You can click these!
+                        </td>
+                        <td class="aboutPageOptionContent">
+                            <a href="javascript:void">
+                                Click!
+                                <i class="material-icons">mouse</i>
+                            </a>
+                            <br>
+                            <a href="javascript:void">
+                                Clack!
+                                <i class="material-icons">highlight_alt</i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="aboutPageOption">
+                        <td class="aboutPageOptionHeader">
+                            <b><i class="material-icons">dangerous</i> Danger Zone!</b><br>
+                            Look out! Big red buttons!<br>
+                        </td>
+                        <td class="aboutPageOptionContent">
+                            <a href="javascript:void" style="color: #f64d4d"
+                                onclick="ipcRenderer.sendSync('delete-authentication')">
+                                Self Destruct!
+                                <i class="material-icons">new_releases</i>
+                            </a>
+                            <br>
+                            <a href="javascript:void" style="color: #f64d4d"
+                                onclick="ipcRenderer.sendSync('uninstall')">
+                                Make the world implode!
+                                <i class="material-icons">public</i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="content" id="scriptingPage">
+            <div id="editorSidebarContainer">
+                <div class="editorSidebar" id="scriptsSidebar">
+                    <div class="sidebarHeader">
+                        <b>Scripts</b>
+                        <a onclick="saveCurrentScript(event.shiftKey)" class="glowy material-icons"
+                            id="saveScript">save</a>
+                        <a href="javascript:openScriptsFolder()" class="glowy material-icons"
+                            id="openScriptsFolder">folder</a>
+                    </div>
+                    <div id="scriptsContent">
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i> 123.lua
+                        </div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                            CapacitorWelcome.lua</div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                            InfiniteYield.lua</div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i> Script
+                            1.lua</div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                            SoundFinder.lua</div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                            autoexec.lua</div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i> dex.lua
+                        </div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                            fluxhub.lua</div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                            script.lua</div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i> test.lua
+                        </div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                            welcome.lua</div>
+                        <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                            hello.lua</div>
+                        <div tabindex="-1" class="script script-folder"><i class="material-icons">folder</i> Jellyfish
+                            Extras<div tabindex="-1" class="script script-file"><i
+                                    class="material-icons">description</i> ClickDetector ESP.lua</div>
+                            <div tabindex="-1" class="script script-file"><i class="material-icons">description</i> Hide
+                                Transparent Parts.lua</div>
+                            <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                                README.lua</div>
+                            <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                                rn3_SpectationUI.lua</div>
+                            <div tabindex="-1" class="script script-file"><i class="material-icons">description</i>
+                                README.txt</div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="editorSidebar" id="toolsSidebar">
+                    <div class="sidebarHeader">
+                        <b>Tools</b>
+                    </div>
+                    <div class="slider" id="speedSlider">
+                        <div class="sliderHeader">
+                            <div class="sliderHeaderText">Walk Speed</div>
+                            <div class="sliderHeaderReset"><button class="simpleButton material-icons"
+                                    onclick="this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).value = 16;pn.onchange()">settings_backup_restore</button>
+                            </div>
+                        </div>
+                        <input type="range" class="fullwidth" min="0"
+                            onchange="runScript('game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = ' + this.value)"
+                            max="160" value="16" />
+                    </div>
+                    <div class="slider" id="jumpSlider">
+                        <div class="sliderHeader">
+                            <div class="sliderHeaderText">Jump Height</div>
+                            <div class="sliderHeaderReset"><button class="simpleButton material-icons"
+                                    onclick="this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).value = 50;this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).onchange()">settings_backup_restore</button>
+                            </div>
+                        </div>
+                        <input type="range" class="fullwidth" min="0"
+                            onchange="runScript('game.Players.LocalPlayer.Character.Humanoid.JumpPower = ' + this.value)"
+                            max="500" value="50" />
+                    </div>
+                    <div class="slider" id="hipSlider">
+                        <div class="sliderHeader">
+                            <div class="sliderHeaderText">Levitation</div>
+                            <div class="sliderHeaderReset"><button class="simpleButton material-icons"
+                                    onclick="this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).value = 2.362;this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).onchange()">settings_backup_restore</button>
+                            </div>
+                        </div>
+                        <input type="range" class="fullwidth"
+                            onchange="runScript('game.Players.LocalPlayer.Character.Humanoid.HipHeight = ' + this.value)"
+                            max="52.362" value="2.362" min="2.362" />
+                    </div>
+                    <div class="slider" id="gravitySlider">
+                        <div class="sliderHeader">
+                            <div class="sliderHeaderText">Local Gravity</div>
+                            <div class="sliderHeaderReset"><button class="simpleButton material-icons"
+                                    onclick="this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).value = 196.2;this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).onchange()">settings_backup_restore</button>
+                            </div>
+                        </div>
+                        <input type="range" class="fullwidth"
+                            onchange="runScript('game.Workspace.Gravity = ' + this.value)" max="500" value="196.2"
+                            min="0" />
+                    </div><br>
+                    <div id="scriptHubScriptContainer">
+                        <div class="script"><i class="material-icons">description</i><b> Kill Gays Script!</b>
+                            <div style="margin-left: calc(2em + 4px); width: calc(320px - 3em); white-space: pre-wrap;">
+                                Game: https://www.roblox.co…</div>
+                        </div>
+                        <div class="script"><i class="material-icons">description</i><b> Kill Gays Script!</b>
+                            <div style="margin-left: calc(2em + 4px); width: calc(320px - 3em); white-space: pre-wrap;">
+                                Game: https://www.roblox.co…</div>
+                        </div>
+                        <div class="script"><i class="material-icons">description</i><b> Kill Gays Script!</b>
+                            <div style="margin-left: calc(2em + 4px); width: calc(320px - 3em); white-space: pre-wrap;">
+                                Game: https://www.roblox.co…</div>
+                        </div>
+                        <div class="script"><i class="material-icons">description</i><b> Kill Gays Script!</b>
+                            <div style="margin-left: calc(2em + 4px); width: calc(320px - 3em); white-space: pre-wrap;">
+                                Game: https://www.roblox.co…</div>
+                        </div>
+                    </div>
+                    <br>
+                    <center>
+                        <a href="#scriptLibrary">Get more scripts</a>
+                    </center>
+                </div>
+                <div class="editorSidebar" id="friendSidebar">
+                    <input type="text" class="textbox" placeholder="Add Friends" id="friendsSearch"></input>
+                    <div id="friendsSidebarContainer" style="">
+                        <div class="sidebarHeader">
+                            <b>Friends</b>
+                        </div>
+                        <div class="script friend online" data-id="1" onclick="showFriendDetails()">
+                            <div style="float: left;"><img src="https://script-ware.com/api/client/avatar/1" height="32"
+                                    width="32"></div>
+                            <div style="margin-left: 48px;"><span
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><b>admin</b>
+                                    <p
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0px;">
+                                        Jailbreak</p>
+                                </span></div>
+                        </div>
+                        <div class="script friend away" data-id="54" onclick="showFriendDetails()">
+                            <div style="float: left;"><img src="https://script-ware.com/api/client/avatar/54"
+                                    height="32" width="32"></div>
+                            <div style="margin-left: 48px;"><span
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><b>ShowerHead</b>
+                                    <p
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0px;">
+                                        Away</p>
+                                </span></div>
+                        </div>
+                        <div class="script friend do not disturb" data-id="2484" onclick="showFriendDetails()">
+                            <div style="float: left;"><img src="https://script-ware.com/api/client/avatar/2484"
+                                    height="32" width="32"></div>
+                            <div style="margin-left: 48px;"><span
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><b>trill</b>
+                                    <p
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0px;">
+                                        Do Not Disturb</p>
+                                </span></div>
+                        </div>
+                        <div class="script friend offline" data-id="2979" onclick="showFriendDetails()">
+                            <div style="float: left;"><img src="https://script-ware.com/api/client/avatar/2979"
+                                    height="19" width="19"></div>
+                            <div style="margin-left: 48px;"><span
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><b>bearic</b>
+                                    <p
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0px;">
+                                    </p>
+                                </span></div>
+                        </div>
+                        <div class="script friend offline" data-id="3315" onclick="showFriendDetails()">
+                            <div style="float: left;"><img src="https://script-ware.com/api/client/avatar/3315"
+                                    height="19" width="19"></div>
+                            <div style="margin-left: 48px;"><span
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><b>LoganDark</b>
+                                    <p
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0px;">
+                                    </p>
+                                </span></div>
+                        </div>
+                        <div class="sidebarHeader">
+                            <b>Friend Requests</b>
+                        </div>
+                        <div class="script friend offline" data-id="">
+                            <div style="float: left;"><img src="https://script-ware.com/api/client/avatar/98"
+                                    height="32" width="32"></div>
+                            <div style="margin-left: 48px;"><span
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><b>theLMGN</b>
+                                    <p
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0px;">
+                                        <a href="javascript:socket.emit('friendship_request',208)">Accept</a> <a
+                                            href="javascript:declineFriendRequest(208)">Decline</a></p>
+                                </span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tabsContainer" onclick="location.hash = 'editor'" onmousewheel="this.scrollLeft += event.deltaY">
+
+            </div>
+            <div id="monacoContainer" onclick="location.hash = 'editor'"></div>
+        </div>
+        <div class="content" id="scriptLibraryPage">
+            <input type="text" class="textbox" placeholder="Search" id="scriptLibrarySearch"></input>
+            <div id="scriptLibraryContainer"></div>
+
+
+        </div>
+    </div>
+    <div id="tooltip">Script-Ware</div>
+    <div id="moveBar"></div>
+    <div id="keyModal" onclick="kmbackclick(...arguments)">
+        <div id="keyBox"><span class="header"><img height="85px" width="85px" src="assets/img/logo.png"></span>
+            <h1>Fake Login</h1>
+            <input type="text" class="textbox" placeholder="Username" id="userInput">
+            <input type="password" class="textbox" placeholder="Password" id="passInput">
+
+            <button id="validateKey" class="outlinedBtn primary" onclick="finishModal()">Close</button><a id="buyBtn"
+                target="_blank" class="outlinedBtn">Do Nothing</a>
+        </div>
+        <a href="javascript:void" style="color: #f64d4d;text-decoration: none; position:fixed; bottom:0px;left:0px;"
+            onclick="ipcRenderer.sendSync('uninstall')" id="uninstallLink">
+            <i class="material-icons">delete_forever</i>
+            Uninstall/Repair Script-Ware
+        </a>
+    </div>
+    <div id="toaster_breadbag" align="right" style="position: fixed; bottom: 0px; right: 0px; z-index: 999999;">
+        <div class="toaster toast toast-is-undefined"
+            style="transform: translate(0%, 0%); transition: transform 0.2s ease 0s;">
+            <p class="message-header">
+                Hello there!
+            </p>
+            <p class="message-body">
+
+            </p><i class="material-icons toastClose" aria-label="delete">close</i>
+        </div>
+        <div class="toaster toast toast-is-error"
+            style="transform: translate(0%, 0%); transition: transform 0.2s ease 0s;">
+            <p class="message-header">
+                Uh oh.
+            </p>
+            <p class="message-body">
+                Bad happened!
+            </p><i class="material-icons toastClose" aria-label="delete">close</i>
+        </div>
+        <div class="toaster toast toast-is-warning"
+            style="transform: translate(0%, 0%); transition: transform 0.2s ease 0s;">
+            <p class="message-header">
+                Hm.
+            </p>
+            <p class="message-body">
+                Something happened!
+            </p><i class="material-icons toastClose" aria-label="delete">close</i>
+        </div>
+        <div class="toaster toast toast-is-success"
+            style="transform: translate(0%, 0%); transition: transform 0.2s ease 0s;">
+            <p class="message-header">
+                Yay!
+            </p>
+            <p class="message-body">
+                Good happened!
+            </p><i class="material-icons toastClose" aria-label="delete">close</i>
+        </div>
+    </div>
+    <script src="../monaco-editor/min/vs/loader.js"></script>
+    <script src="toaster.js"></script>
+    <script src="client.js"></script>
+    <script src="editor.js"></script>
+    <script src="theming.js"></script>
+    <style id="themeApplication"></style>
+    <link rel="stylesheet" href="scratchpad.css">
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Jellyfish</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <!-- without specifying charset monaco goes Â-->
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="accent.css">
+    </head>
+    <body>
+        <div id="appContainer ">
+            <div id="topBar" class="shadow">
+                <h1 class="topBarBrand">Jellyfish</h1>
+                <div id="topBarNavi">
+                    <a href="#editor" class="selected">Editor</a>
+                    <a href="#settings">Tools</a>
+                    <a href="#scripts">Scripts</a>
+                    <a href="#scripthub" style="display: none;">More Scripts</a>
+                    
+                </div>
+                <button id="topBarInject" onclick="document.body.classList.add('loggingIn')" class="outlinedBtn">Login Page</button>
+            </div>
+            <div id="mainContainer">
+                <div id="editorContainer" class="container">
+                    <div id="mainMonaco" style="width:100vw;height:calc(100vh - 56px);"></div>
+                    <button id="runFab" class="fabulous shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="45" height="45"><path d="M0 0h24v24H0z" fill="none"/><path  fill="#fff" d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <button id="saveFab" class="fabulous shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="35px" height="35px"><path d="M0 0h24v24H0z" fill="none"/><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/></svg>
+                    </button>
+                </div>
+                <div id="settingsContainer" class="container" style="left:100vw;margin-top: 0px;overflow: auto;overflow-x: hidden;">
+                    <h2>Slider</h2>
+                    <div class="slider" id="speedSlider">
+                        <div class="sliderHeader">
+                            <div class="sliderHeaderText">Slider</div>
+                            <div class="sliderHeaderReset"><button class="simpleButton" onclick="this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).value = 50;">Reset</button></div>
+                        </div>
+                        <input type="range" class="fullwidth" min="0"  max="100" value="50"/>
+                    </div>
+                    <h2>Checkboxes</h2>
+                    <input id="homo"  type="checkbox" style="margin-left: 8px;">
+                    <label for="homo">Checkbox</label>
+                    <input id="alwaysOnTop"  type="checkbox" style="margin-left: 8px;">
+                    <label for="alwaysOnTop">Checkbox</label>
+                    <h3>Buttons</h3>
+                    <div id="aboutPageThemes">
+                        <a class="simplebutton" style="margin: 8px;"><b>Button</b></a>
+                        <a class="simplebutton" style="margin: 8px;"><b>Button</b></a>
+                        <a class="simplebutton" style="margin: 8px;"><b>Button</b></a>
+                    </div>
+                    <div class="attribution"><hr>made by <a target="_blank" class="link" href="https://thelmgn.com">theLMGN</a> in 2020-21.<br>
+                        <br>
+                        <a class="simpleButton">Button</a>
+                        <a class="simpleButton">Button</a>
+                        </div>
+                </div>
+                <div id="scriptsContainer" class="container" style="left:200vw;">
+                    <div id="searchContainer"><input type="text" id="searchBox" placeholder="Search"></input></div>
+                    <div id="scriptsSidebar">
+                        <div class="script " data-filename="/Users/me/Documents/Script-Ware/Scripts/Jellyfish Extras/rn3_SpectationUI.lua" data-relative="Jellyfish Extras/rn3_SpectationUI.lua"><h1>rn3_SpectationUI.lua</h1><h3>Jellyfish Extras</h3></div>
+                        <div class="script " data-filename="/Users/me/Documents/Script-Ware/Scripts/Jellyfish Extras/rn3_SpectationUI.lua" data-relative="Jellyfish Extras/rn3_SpectationUI.lua"><h1>rn3_SpectationUI.lua</h1><h3>Jellyfish Extras</h3></div>
+                        <div class="script scriptSelected" data-filename="/Users/me/Documents/Script-Ware/Scripts/Jellyfish Extras/rn3_SpectationUI.lua" data-relative="Jellyfish Extras/rn3_SpectationUI.lua"><h1>rn3_SpectationUI.lua</h1><h3>Jellyfish Extras</h3></div>
+                        <div class="script " data-filename="/Users/me/Documents/Script-Ware/Scripts/Jellyfish Extras/rn3_SpectationUI.lua" data-relative="Jellyfish Extras/rn3_SpectationUI.lua"><h1>rn3_SpectationUI.lua</h1></div>
+                        <div class="script" data-filename="/Users/me/Documents/Script-Ware/Scripts/Jellyfish Extras/rn3_SpectationUI.lua" data-relative="Jellyfish Extras/rn3_SpectationUI.lua"><h1>rn3_SpectationUI.lua</h1><h3>Jellyfish Extras</h3></div>
+
+                    </div>
+                    <div id="scriptsDetails">
+                        <h1>Select a script on the left.</h1>
+                        <h3>.You'll be able to edit the script before running it</h3>
+                        <div id="previwMonaco" style="width:65vw;height:calc(100vh - 122px); background: #f00;margin-left:-8px;margin-top:8px;"></div>
+                        <button id="runScript" class="fabulous shadow highlightedbtn"  onclick='ipcRenderer.send("run-script", previewEditor.getValue())''>Run Script</button>
+                        <button id="editBtn" class="fabulous shadow highlightedbtn"  onclick='editScript(previewEditor.getValue())''>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px" style="margin-right: 1px;"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="loginContainer">
+            <div id="loginBox">
+                <img width="85" height="85" src="assets/icon-win.png"/>
+                <h1>Fake Login</h1>
+                <input type="text" class="textbox" placeholder="Plain Text"  id="loginUsername"></input>
+                <input type="password" class="textbox" placeholder="Masked" id="loginPassword"></input>
+                <button id="loginBtn" class="outlinedBtn" onclick="document.body.classList.remove('loggingIn')">Close</button>
+            </div>
+        </div>
+        <script src="../monaco-editor/min/vs/loader.js"></script>
+        <script src="client.js"></script>
+        <style id="themeApplication"></style>
+    </body>
+</html>
