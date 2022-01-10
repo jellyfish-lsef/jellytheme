@@ -97,5 +97,6 @@
         }
         iframe.onload = () => init(location.hash == "#capacitor" ? capacitor : jellyfish);
         setTimeout(() => init(location.hash == "#capacitor" ? capacitor : jellyfish), 500)
+        if (location.hash == "#capacitor") iframe.src = "capacitor/index.html";
     </script>
 </body>
