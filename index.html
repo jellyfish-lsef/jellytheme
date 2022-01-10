@@ -34,6 +34,7 @@
             alert("Since Jellyfish & Script-Ware were both designed to run in Chromium based environments, it is highly recommended that you use Google Chrome to use Jellytheme.")
         }
         var iframe = document.querySelector('iframe');
+        if (location.hash == "#capacitor") iframe.src = "capacitor/index.html";
         var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
         var Application = "Jellyfish";
         var loadSaves = {}
@@ -97,6 +98,6 @@
         }
         iframe.onload = () => init(location.hash == "#capacitor" ? capacitor : jellyfish);
         setTimeout(() => init(location.hash == "#capacitor" ? capacitor : jellyfish), 500)
-        if (location.hash == "#capacitor") iframe.src = "capacitor/index.html";
+        
     </script>
 </body>
