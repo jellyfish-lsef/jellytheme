@@ -95,7 +95,7 @@
             }
             application(gui,load)
         }
-        iframe.onload = () => init(jellyfish);
-        setTimeout(() => init(jellyfish), 500)
+        iframe.onload = () => init(location.hash == "#capacitor" ? capacitor : jellyfish);
+        setTimeout(() => init(location.hash == "#capacitor" ? capacitor : jellyfish), 500)
     </script>
 </body>
